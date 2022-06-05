@@ -6,6 +6,7 @@ import {
   Image,
   Icon,
   Button,
+  ButtonGroup,
 } from '@chakra-ui/react'
 import { EmailIcon, PhoneIcon } from '@chakra-ui/icons'
 import { AiFillHome } from 'react-icons/ai'
@@ -22,7 +23,7 @@ export default function PersonalInformation() {
       flexDirection="column"
       alignItems="center"
     >
-      <Box display="flex" width="auto" alignItems="center">
+      <Box display="flex" flexDirection={"column"} width="auto" alignItems="center" justifyItems="center">
         <Image
           src="/johndoe.jpg"
           alt="profile pic"
@@ -32,12 +33,13 @@ export default function PersonalInformation() {
         />
       </Box>
 
-      <Container
+      <Box
         display="flex"
         flexDirection="column"
         alignItems="center"
-        w="70vw"
+        w={["md", "xl"]}
         mt={20}
+        p={20}
       >
         <Box
           display="flex"
@@ -90,14 +92,15 @@ export default function PersonalInformation() {
             Proin tellus libero.{' '}
           </Text>
         </Box>
-      </Container>
-      <Box mt={50}  display="flex"  w="100%" justifyContent='space-around' flexWrap="wrap">
+      </Box>
+      <Box mt={50}  display="flex" flexDirection={"column"} w="100%" justifyContent='space-around' alignItems="center">
         <Link href="/">
           <Button
-            variant="solid"
+          width={'100%'}
             size="sm"
+            variant="solid"
             colorScheme="orange"
-            mb={10}
+            mb={30}
           >
             <Icon as={FaIdCard} mr={5} />
             Télécharger mon CV

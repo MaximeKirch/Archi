@@ -16,13 +16,17 @@ import {
   MenuDivider,
   Button,
   Switch,
+  useColorMode,
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { AiFillHome } from 'react-icons/ai'
 import { DarkModeSwitch } from './DarkSwitchMode'
+import { AiOutlineHome} from 'react-icons/ai'
 
 export default function Navbar() {
+  const {colorMode} = useColorMode()
+  const isDark = colorMode === "dark"
   return (
     // <Menu>
     //   <MenuButton rightIcon={<HamburgerIcon />}>
@@ -36,11 +40,11 @@ export default function Navbar() {
     //     <MenuItem>Attend a Workshop</MenuItem>
     //   </MenuList>
     // </Menu>
-    <Flex w="100%" pos="fixed" top="1rem" display="flex" alignItems="center">
+    <Flex w="100%" pos="fixed" display="flex" alignItems="center" zIndex={99} background={isDark ? 'blackAlpha.800' : 'whiteAlpha.800'}>
         <Flex>
       <NextLink href="/" passHref>
         <Button as="a" variant="ghost" aria-label="Home" mx={5} my={5} w={{base: "20%" }}>
-          Home
+          <Icon as={AiOutlineHome} boxSize={6} />
         </Button>
       </NextLink>
 

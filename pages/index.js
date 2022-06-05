@@ -1,7 +1,7 @@
-import Head from 'next/head'
 import Link from 'next/link'
 
 export default function Index() {
+
   return (
     <div>
       <Link href='/home'> Home </Link>
@@ -9,3 +9,10 @@ export default function Index() {
     </div>
   )
 }
+
+
+
+
+
+  
+  

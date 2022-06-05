@@ -1,7 +1,5 @@
 import { useColorMode, Switch, Flex, Button, IconButton } from "@chakra-ui/react";
-import { useState } from "react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import NextLink from 'next/link'
+import { HamburgerIcon, CloseIcon, SunIcon } from "@chakra-ui/icons";
 
 export const DarkModeSwitch = () => {
     const {colorMode,  toggleColorMode} = useColorMode()
@@ -10,8 +8,8 @@ export const DarkModeSwitch = () => {
         <Flex>
         <Switch
             pos="fixed"
-            top= "1rem"
-            right='1rem'
+            top= "2rem"
+            right='2rem'
             color='green'
             isChecked={isDark}
             onChange={toggleColorMode}
