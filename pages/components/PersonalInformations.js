@@ -6,13 +6,16 @@ import {
   Image,
   Icon,
   Button,
-  ButtonGroup,
+  useColorMode
 } from '@chakra-ui/react'
 import { EmailIcon, PhoneIcon } from '@chakra-ui/icons'
 import { AiFillHome } from 'react-icons/ai'
 import { FaIdCard } from 'react-icons/fa'
 
 export default function PersonalInformation() {
+
+  const {colorMode} = useColorMode()
+  const isDark = colorMode === "dark"
   return (
     <Container
       height="100vh"
@@ -23,14 +26,14 @@ export default function PersonalInformation() {
       flexDirection="column"
       alignItems="center"
     >
-      <Box display="flex" flexDirection={"column"} width="auto" alignItems="center" justifyItems="center">
+      <Box display="flex" flexDirection={"column"} width={["sm", "lg","2xl"]} alignItems="center" justifyItems="center">
         <Image
           src="/johndoe.jpg"
           alt="profile pic"
-          w={200}
-          h={200}
-          borderRadius={100}
+          w={["2xs", "2xs", "2xs"]}
+          borderRadius={250}
         />
+        <Text pt={20} fontWeight="bold" fontSize="20px">Marie Coulombon - Casanova </Text>
       </Box>
 
       <Box
@@ -51,20 +54,20 @@ export default function PersonalInformation() {
           maxWidth="800px"
         >
           <Box display="flex" flexDirection="column" w="auto">
-            <Text fontWeight="bold" fontSize="32" color="orange">
+            <Text fontWeight="bold" fontSize="32" color={isDark ? "teal.400" : "orange"}>
               {' '}
               À propos de moi
             </Text>
             <Box mt={20} display="flex" flexDirection="row">
-              <Icon color="orange" mr={5} as={AiFillHome} />
+              <Icon color={isDark ? "teal.400" : "orange"} mr={5} as={AiFillHome} />
               <Text> A Tiusella 20126 Evisa</Text>
             </Box>
             <Box mt={5} display="flex" flexDirection="row">
-              <Icon color="orange" mr={5} as={AiFillHome}  />
+              <Icon color={isDark ? "teal.400" : "orange"} mr={5} as={AiFillHome}  />
               <Text>59 Rue Paul Codaccioni 13007 Marseille</Text>
             </Box>
             <Box mt={5} display="flex" flexDirection="row">
-              <Icon color="orange" mr={5} as={PhoneIcon} />
+              <Icon color={isDark ? "teal.400" : "orange"} mr={5} as={PhoneIcon} />
               <Text> 06 52 05 55 86</Text>
             </Box>
             {/* <Box mt={5} display="flex" flexDirection="row">
