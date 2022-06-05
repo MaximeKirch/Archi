@@ -5,7 +5,7 @@ export default function description({ work }) {
 
   return (
     <Flex display="flex" flexDirection="column" ml={10} mr={10}  height="auto">
-    <Box alignSelf="center" w={['xs', "lg", "5xl"]} mt={20}>
+    <Box alignSelf="center" w={['xs', "md", "5xl"]} mt={20}>
         <Image  src={work.pictures.preview} alt="preview" />
       </Box>
       <Box w={["xs", "ml", "xl"]} pt={20} mb={5} display="flex">
@@ -17,7 +17,7 @@ export default function description({ work }) {
           {work.year} - {work.school} - {work.description}
         </Text>
       </Box>
-      <Box>
+      <Box mb={10}>
         <Text fontSize={14} lineHeight="1.8" fontWeight="light">
           {work.resume}
         </Text>
@@ -28,10 +28,10 @@ export default function description({ work }) {
         <Image loading="lazy" src={work.pictures.cut[2]} alt="cut2" />
         <Image loading="lazy" src={work.pictures.cut[3]} alt="cut3" />
         <Image loading="lazy" src={work.pictures.mass} alt="mass" />
-        <Box display="flex" flexDirection={["column", "row", "row"]}w={["xs","sm", "xl"]}>
-        <Image loading="lazy" src={work.pictures.access} alt="access" />
-        <Image loading="lazy" src={work.pictures.batis} alt="batis" />
-        <Image loading="lazy" src={work.pictures.parcours} alt="parcours" />
+        <Box display="flex" alignItems={["center", "null", "null"]} justifyContent={["null", "null","space-between"]}  flexDirection={["column", "column", "row"]} w={["xs","md", "xl"]}>
+        <Image mr={5} ml={2} w={["xs", "s", "l"]} loading="lazy" src={work.pictures.access} alt="access" />
+        <Image mr={5} w={["xs", "s", "l"]} loading="lazy" src={work.pictures.batis} alt="batis" />
+        <Image w={["xs", "s", "l"]} loading="lazy" src={work.pictures.parcours} alt="parcours" />
         </Box>
         </Box>
     </Flex>

@@ -17,6 +17,7 @@ import {
   Button,
   Switch,
   useColorMode,
+  LinkProps
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { HamburgerIcon } from '@chakra-ui/icons'
@@ -42,25 +43,25 @@ export default function Navbar() {
     // </Menu>
     <Flex w="100%" pos="fixed" display="flex" alignItems="center" zIndex={99} background={isDark ? 'blackAlpha.800' : 'whiteAlpha.800'}>
         <Flex>
-      <NextLink href="/" passHref>
+      <NextLink activeClassName="is-active" href="/" passHref>
         <Button as="a" variant="ghost" aria-label="Home" mx={5} my={5} w={{base: "20%" }}>
           <Icon as={AiOutlineHome} boxSize={6} />
         </Button>
       </NextLink>
 
-      <NextLink href="/home" passHref>
+      <NextLink activeClassName="is-active" href="/home" passHref>
         <Button  as="a" variant="ghost" aria-label="Accueil" mx={5} my={5} w={{base: "20%" }}>
           Accueil
         </Button>
       </NextLink>
 
-      <NextLink href="/works" passHref>
+      <NextLink activeClassName="is-active" href="/works" passHref>
         <Button  variant='ghost' aria-label="Travaux" mx={5} my={5} w={{base: "20%" }}>
             Travaux
         </Button>
       </NextLink>
 
-      <NextLink href="/about" passHref>
+      <NextLink activeClassName="is-active" href="/about" passHref>
         <Button  as="a" variant="ghost" aria-label="A Propos" mx={5} my={5} w={{base: "20%" }}>
             À Propos
         </Button>
